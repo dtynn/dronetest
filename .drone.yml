@@ -8,6 +8,7 @@ clone:
 
 pipeline:
   test:
+    images: opensuse
     commands:
       - pwd
       - echo ${DRONE_BRANCH}
