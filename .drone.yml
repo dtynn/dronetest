@@ -6,3 +6,4 @@ pipeline:
   test:
     commands:
       - pwd
+      - echo ${DRONE_BRANCH}
