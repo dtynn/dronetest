@@ -12,3 +12,4 @@ pipeline:
     commands:
       - pwd
       - echo ${DRONE_BRANCH}
+      - ls -la
