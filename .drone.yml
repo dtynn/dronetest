@@ -26,7 +26,7 @@ pipeline:
     image: opensuse
     when:
       matrix:
-        branch: env/test1
+        branch: env/test2
         event: push
       matrix:
         branch: master
