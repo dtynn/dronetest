@@ -10,6 +10,25 @@ pipeline:
   test:
     image: opensuse
     commands:
+      - echo test
+
+  env_test1:
+    image: opensuse
+    when:
+      branch: env/test1
+      event: push
+    commands:
       - pwd
       - echo ${DRONE_BRANCH}
       - ls -la
+
+  deploy:
+    image: opensuse
+    when:
+      matrix:
+        branch: env/test1
+        event: push
+      matrix:
+        branch: master
+        event: deployment
+
