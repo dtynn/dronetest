@@ -1,0 +1,8 @@
+workspace:
+  base: /project/dronetest
+  path: ${DRONE_BRANCH}
+
+pipeline:
+  test:
+    commands:
+      - pwd
