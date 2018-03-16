@@ -2,6 +2,10 @@ workspace:
   base: /project/dronetest
   path: ${DRONE_BRANCH}
 
+clone:
+  git:
+    image: plugins/git
+
 pipeline:
   test:
     commands:
