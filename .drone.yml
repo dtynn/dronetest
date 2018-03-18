@@ -4,7 +4,7 @@ deploy_block: &deploy_block
   commands:
     - echo 'deploy block'
 
-condition_env_test2:
+condition_env_test2: &condition_env_test2
   when:
     branch: env/test2
     event: push
