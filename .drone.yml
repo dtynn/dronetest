@@ -31,4 +31,4 @@ pipeline:
       matrix:
         branch: master
         event: deployment
-
+        environment: all
