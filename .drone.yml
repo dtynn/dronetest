@@ -2,7 +2,7 @@
 deploy_block: &deploy_block
   image: opensuse
   commands:
-    - echo `deploy block`
+    - echo 'deploy block'
 # reused blocks end
 
 workspace:
