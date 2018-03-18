@@ -1,3 +1,10 @@
+# reused blocks
+deploy_block: &deploy_block
+  image: opensuse
+  commands:
+    - echo 'deploy block'
+# reused blocks end
+
 workspace:
   base: /project/dronetest
   path: ${DRONE_BRANCH}
@@ -22,13 +29,15 @@ pipeline:
       - echo ${DRONE_BRANCH}
       - ls -la
 
-  deploy:
-    image: opensuse
-    when:
-      matrix:
+  deploy_test:
+      <<: *deploy_block
+      when:
         branch: env/test2
         event: push
-      matrix:
+
+  deploy_master:
+      <<: *deploy_block
+      when:
         branch: master
         event: deployment
-
+        environment: all
