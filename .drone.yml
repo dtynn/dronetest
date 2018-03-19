@@ -3,6 +3,11 @@ deploy_block: &deploy_block
   image: opensuse
   commands:
     - echo 'deploy block'
+
+condition_env_test2: &condition_env_test2
+  when:
+    branch: env/test2
+    event: push
 # reused blocks end
 
 workspace:
@@ -31,9 +36,7 @@ pipeline:
 
   deploy_test:
       <<: *deploy_block
-      when:
-        branch: env/test2
-        event: push
+      <<: *condition_env_test2
 
   deploy_master:
       <<: *deploy_block
